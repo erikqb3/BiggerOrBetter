@@ -4,7 +4,7 @@ const nextConfig = {
 	images: {
 		unoptimized: true,
 		domains: [
-			"res.cloudinary.com",
+			"https://erikqb3.github.io/BiggerOrBetter/",
 			"avatars.githubusercontent.com",
 			"lh3.googleusercontent.com",
 			"via.placeholder.com",

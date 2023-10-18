@@ -12,9 +12,9 @@ const nextConfig = {
 		],
 	},
 	env: {
-		NEXTAUTH_SECRET: "b51afa1ed38dde0d5d8f218a7fe48e1a",
+		NEXTAUTH_SECRET: "zKSqxkeQB36pXUtDbZCSJrYoAxlA5Acut7bMahFBMLU=", //same as in .env
 		NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: "dxkvem7qh", // CHECK!! https://console.cloudinary.com/console/c-0dd466c1e9b508fafe628fad55b216
-		NEXT_CLOUDINARY_PRESET: "vikings",
+		NEXT_CLOUDINARY_PRESET: "ml_default",
 	},
 };
 

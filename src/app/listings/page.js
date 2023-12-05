@@ -6,6 +6,7 @@ import { getCurrentUser } from "@/actions/getCurrentUser";
 export const dynamic = "force-dynamic";
 
 const page = async ({ searchParams }) => {
+	console.log(searchParams)
 	const { listings, totalPages } = await getListings(searchParams);
 	const currentUser = await getCurrentUser();
 

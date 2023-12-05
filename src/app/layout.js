@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 import "react-accessible-accordion/dist/fancy-example.css";
 
 import "./styles/style.css";
+import "./styles/customCSS_erik.css"
 import "./styles/responsive.css";
 
 import TosterProvider from "@/providers/TosterProvider";

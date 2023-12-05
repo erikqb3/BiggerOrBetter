@@ -69,7 +69,7 @@ const UserMenu = ({ currentUser }) => {
 										</Link>
 									</li>
 									<li>
-										<Link 
+										{/* <Link 
 											href="/listings/new"
 											className={`user-nav-link ${
 												currentRoute === "/listings/new"
@@ -79,7 +79,7 @@ const UserMenu = ({ currentUser }) => {
 										>
 											<i className="ri-menu-add-line"></i>{" "}
 											Add Listings
-										</Link>
+										</Link> */}
 									</li>
 									<li>
 										<Link 
@@ -91,7 +91,7 @@ const UserMenu = ({ currentUser }) => {
 											}`}
 										>
 											<i className="ri-bookmark-3-line"></i>{" "}
-											Favourites
+											Favorites
 										</Link>
 									</li>
 									<li>

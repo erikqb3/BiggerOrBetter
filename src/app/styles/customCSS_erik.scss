@@ -1,0 +1,36 @@
+/*# sourceMappingURL=customCSS_erik.css.map */
+/*# sourceMappingURL=customCSS_erik.css.map */
+
+/**
+@mixin mobile{ //min-width:0
+}
+@mixin min{ //min-width:760px
+}
+@mixin med{ //min-width:992px
+}
+@mixin max{ //min-width:1200px
+}
+*/
+
+
+
+@import "./customCSS_erik/index.erik";
+@import "./customCSS_erik/home.erik";
+
+
+@media all and (min-width: 0px) {
+ @include mobileIndex;
+ @include mobileHome;
+}
+@media all and (min-width: 760px) {
+  @include minIndex;
+  @include minHome;
+}
+@media all and (min-width: 992px) {
+  @include medIndex;
+  @include medHome;
+}
+@media all and (min-width: 1200px){ 
+  @include maxIndex;
+  @include maxHome;
+}

@@ -19,7 +19,7 @@ const Locations = () => {
 		<div className="location-area ptb-100">
 			<div className="container for-shape">
 				<div className="section-title">
-					<h2>Most Popular Location</h2>
+					<h2>Top Users</h2>
 				</div>
 
 				<div className="row justify-content-center">

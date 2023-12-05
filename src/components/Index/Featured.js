@@ -53,58 +53,58 @@ const Featured = ({ currentUser }) => {
 									}`}
 									onClick={() => getFeatured("all")}
 								>
-									All
+									Most Recent
 								</button>
 							</li>
 							<li className="nav-item">
 								<button
 									className={`nav-link default-btn ${
-										cat === "Bar" && "active"
+										cat === "Automotive" && "active"
 									}`}
-									onClick={() => getFeatured("Bar")}
+									onClick={() => getFeatured("Automotive")}
 								>
-									Bar
+									Automotive
 								</button>
 							</li>
 							<li className="nav-item">
 								<button
 									className={`nav-link default-btn ${
-										cat === "Restaurant" && "active"
+										cat === "Apparel" && "active"
 									}`}
-									onClick={() => getFeatured("Restaurant")}
+									onClick={() => getFeatured("Apparel")}
 								>
-									Restaurant
+									Apparel
 								</button>
 							</li>
 
 							<li className="nav-item">
 								<button
 									className={`nav-link default-btn ${
-										cat === "Modern" && "active"
+										cat === "Electronics" && "active"
 									}`}
-									onClick={() => getFeatured("Modern")}
+									onClick={() => getFeatured("Electronics")}
 								>
-									Modern
+									Electronics
 								</button>
 							</li>
 							<li className="nav-item">
 								<button
 									className={`nav-link default-btn ${
-										cat === "Real Estate" && "active"
+										cat === "Entertainment" && "active"
 									}`}
-									onClick={() => getFeatured("Real Estate")}
+									onClick={() => getFeatured("Entertainment")}
 								>
-									Real Estate
+									Entertainment
 								</button>
 							</li>
 							<li className="nav-item">
 								<button
 									className={`nav-link default-btn ${
-										cat === "Vehicle" && "active"
+										cat === "Family" && "active"
 									}`}
-									onClick={() => getFeatured("Vehicle")}
+									onClick={() => getFeatured("Family")}
 								>
-									Vehicle
+									Family
 								</button>
 							</li>
 						</ul>

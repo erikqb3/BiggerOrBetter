@@ -1,0 +1,117 @@
+/*# sourceMappingURL=customCSS_erik.css.map */
+@mixin mobileHome{ //min-width:0
+  
+  .banner-area{
+    .container-fluid{
+      .banner-content{
+        .search-form{
+          background-color: rgba(248,248,248,0.75);
+        }
+      }
+      .banner-img{
+        left:0px;
+        img{
+          // content: url("/images/added_erik/home_banner_mobile.jpg");
+          // width: 100%;
+        }
+      }
+    }
+  }
+  .single-category{
+    .category-content > h3{
+      margin-top: 12px;
+    }
+    .category-img{
+      img{
+        margin-bottom:0;
+      }
+      i{
+        // background-color: rgba(125,125,125,0.75);
+        // color: rgba(250,0,0,0.75);
+        // background-color: rgba(238,183,0,0.75);
+        background-color: rgba(250,0,0,0.75);
+      }
+    } 
+  }
+
+  .featured-area {
+    // background-color: rgb(175,175,175);
+    .container{
+      .section-title-wrap{
+        .left-title,
+        .section-title-right{
+         position:relative; 
+         max-width:100%;
+         margin: -15px auto 30px auto;
+         text-align:center;
+         display:flex;
+         align-items:center;
+         justify-content:center;
+        h2{text-align:center;}
+        .nav{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        li{
+          button{
+            &:hover,&:focus{
+              background-color:#F0002A
+            }
+            &:active{
+              background-color:rgb(175,0,0);
+            }
+          }
+        }
+        }
+        }
+      }
+    }
+    .container-fluid {
+      left:0;
+      .tab-content{
+        .tab-pane{
+          .swiper{
+            .swiper-wrapper{
+              .swipper-slide{
+                .single-featured{
+                  .featured-img{
+                    max-height:300px;
+                    overflow:hidden;
+                  }
+                }
+              }
+            }
+            .swiper-pagination-clickable{
+              span{
+                background-color:rgb(250,0,0);
+                // opacity: 1;
+                &:hover{
+                  // background-color: rgb(238,183,0);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@mixin minHome{ //min-width:760px
+}
+@mixin medHome{ //min-width:992px
+  .banner-area{
+    .container-fluid{
+      .banner-content{
+        .search-form{
+        }
+      }
+      .banner-img{
+        img{
+          // content: url("/images/added_erik/home_banner_desktop.jpg");
+        }
+      }
+    }
+  }
+}
+@mixin maxHome{ //min-width:1200px
+}

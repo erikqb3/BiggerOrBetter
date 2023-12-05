@@ -109,7 +109,7 @@ const Navbar = ({ currentUser }) => {
 											Faq
 										</Link>
 									</li>
-									<li className="nav-item">
+									{/* <li className="nav-item">
 										<Link
 											href="/blog"
 											className={`nav-link ${
@@ -118,7 +118,7 @@ const Navbar = ({ currentUser }) => {
 										>
 											Blog
 										</Link>
-									</li>
+									</li> */}
 
 									<li className="nav-item">
 										<Link

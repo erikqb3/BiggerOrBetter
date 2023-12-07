@@ -16,21 +16,26 @@
 
 @import "./customCSS_erik/index.erik";
 @import "./customCSS_erik/home.erik";
+@import "./customCSS_erik/login.erik";
 
 
 @media all and (min-width: 0px) {
  @include mobileIndex;
  @include mobileHome;
+ @include mobileLogin;
 }
 @media all and (min-width: 760px) {
   @include minIndex;
   @include minHome;
+  @include minLogin;
 }
 @media all and (min-width: 992px) {
   @include medIndex;
   @include medHome;
+  @include medLogin;
 }
 @media all and (min-width: 1200px){ 
   @include maxIndex;
   @include maxHome;
+  @include maxLogin;
 }

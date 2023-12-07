@@ -116,20 +116,20 @@ const Featured = ({ currentUser }) => {
 				<div className="tab-content">
 					<div className="tab-pane fade show active">
 						<Swiper 
-							spaceBetween={30}
+							spaceBetween={15}
 							grabCursor={true}
 							pagination={{
 								clickable: true,
 							}}
 							breakpoints={{
 								0: {
-									slidesPerView: 1,
-								},
-								768: {
 									slidesPerView: 2,
 								},
-								1200: {
+								768: {
 									slidesPerView: 4,
+								},
+								1200: {
+									slidesPerView: 6,
 								},
 							}}
 							navigation={true}

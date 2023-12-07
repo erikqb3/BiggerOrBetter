@@ -8,8 +8,17 @@
   }
   .navbar-toggler,
   .navbar-toggler-right{
-    color:red;
-    border-color:red;
+    color:rgb(240,0,42);
+    border-color:rgb(240,0,42);
+    background: rgb(240,0,42) !important;
+    border-radius: 5px;
+    &:not(.collapsed){
+      background: rgb(175,0,0) !important;
+    }
+    .icon-bar{
+      color:white;
+      background:white;
+    }
   }
 
 .single-featured{

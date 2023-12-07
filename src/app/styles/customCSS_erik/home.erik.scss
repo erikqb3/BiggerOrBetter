@@ -2,16 +2,53 @@
 @mixin mobileHome{ //min-width:0
   
   .banner-area{
+    // background-color: rgb(175,175,175);
     .container-fluid{
       .banner-content{
+        h1{
+          color:white;
+          text-shadow: 2px 2px black;
+          background-color: rgba(0,0,0,0.75);
+          margin-bottom:0;
+          padding: 20px 0;
+        }
         .search-form{
-          background-color: rgba(248,248,248,0.75);
+          background-color: rgba(0,0,0,0.75);
+          color:white;
+          margin-bottom:0;
+          border-radius:0;
+          // border-radius: 6px 6px 0 0;
+          .row{
+            .col-lg-6{
+              width: 100%;
+              // color:white;
+              .form-group{
+                input{
+                  color:white;
+                }
+                .search-list{
+                  color:black;
+                }
+              }
+            }
+          }
+        }
+        .src-tag{
+          background-color: rgba(0,0,0,0.75);
+          color:white;
+          padding: 5px 0;
+          border-radius: 0 0 6px 6px;
+          display:none;
         }
       }
       .banner-img{
         left:0px;
+        &::before{
+          background:none;
+        }
         img{
-          // content: url("/images/added_erik/home_banner_mobile.jpg");
+          background:none;
+          content: url("/images/added_erik/home_banner_mobile.jpg");
           // width: 100%;
         }
       }
@@ -72,11 +109,19 @@
         .tab-pane{
           .swiper{
             .swiper-wrapper{
-              .swipper-slide{
+              .swiper-slide{
                 .single-featured{
-                  .featured-img{
+                  .feature-img{
                     max-height:300px;
                     overflow:hidden;
+                  }
+                  .featured-content{
+                    .d-flex{
+                      flex-wrap:wrap;
+                    }
+                    .featured-info{
+                      display:none;
+                    }
                   }
                 }
               }
@@ -100,6 +145,7 @@
 }
 @mixin medHome{ //min-width:992px
   .banner-area{
+    height: 60vh;
     .container-fluid{
       .banner-content{
         .search-form{
@@ -107,7 +153,7 @@
       }
       .banner-img{
         img{
-          // content: url("/images/added_erik/home_banner_desktop.jpg");
+          content: url("/images/added_erik/home_banner_desktop.jpg");
         }
       }
     }

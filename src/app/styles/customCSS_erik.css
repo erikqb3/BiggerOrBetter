@@ -12,6 +12,7 @@
 */
 
 
+
 @media all and (min-width: 0px) {
   a.hover,
   .default-btn:hover {
@@ -21,8 +22,19 @@
   }
   .navbar-toggler,
   .navbar-toggler-right {
-    color: red;
-    border-color: red;
+    color: rgb(240, 0, 42);
+    border-color: rgb(240, 0, 42);
+    background: rgb(240, 0, 42) !important;
+    border-radius: 5px;
+  }
+  .navbar-toggler:not(.collapsed),
+  .navbar-toggler-right:not(.collapsed) {
+    background: rgb(175, 0, 0) !important;
+  }
+  .navbar-toggler .icon-bar,
+  .navbar-toggler-right .icon-bar {
+    color: white;
+    background: white;
   }
   .footer-area {
     background-color: #424F50;
@@ -53,11 +65,44 @@
   .footer-area .container .row ul li:active a:visited {
     color: rgb(250, 0, 0);
   }
+  .banner-area .container-fluid .banner-content h1 {
+    color: white;
+    text-shadow: 2px 2px black;
+    background-color: rgba(0, 0, 0, 0.75);
+    margin-bottom: 0;
+    padding: 20px 0;
+  }
   .banner-area .container-fluid .banner-content .search-form {
-    background-color: rgba(248, 248, 248, 0.75);
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+  .banner-area .container-fluid .banner-content .search-form .row .col-lg-6 {
+    width: 100%;
+  }
+  .banner-area .container-fluid .banner-content .search-form .row .col-lg-6 .form-group input {
+    color: white;
+  }
+  .banner-area .container-fluid .banner-content .search-form .row .col-lg-6 .form-group .search-list {
+    color: black;
+  }
+  .banner-area .container-fluid .banner-content .src-tag {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 5px 0;
+    border-radius: 0 0 6px 6px;
+    display: none;
   }
   .banner-area .container-fluid .banner-img {
     left: 0px;
+  }
+  .banner-area .container-fluid .banner-img::before {
+    background: none;
+  }
+  .banner-area .container-fluid .banner-img img {
+    background: none;
+    content: url("/images/added_erik/home_banner_mobile.jpg");
   }
   .single-category .category-content > h3 {
     margin-top: 12px;
@@ -100,12 +145,30 @@
   .featured-area .container-fluid {
     left: 0;
   }
-  .featured-area .container-fluid .tab-content .tab-pane .swiper .swiper-wrapper .swipper-slide .single-featured .featured-img {
+  .featured-area .container-fluid .tab-content .tab-pane .swiper .swiper-wrapper .swiper-slide .single-featured .feature-img {
     max-height: 300px;
     overflow: hidden;
   }
+  .featured-area .container-fluid .tab-content .tab-pane .swiper .swiper-wrapper .swiper-slide .single-featured .featured-content .d-flex {
+    flex-wrap: wrap;
+  }
+  .featured-area .container-fluid .tab-content .tab-pane .swiper .swiper-wrapper .swiper-slide .single-featured .featured-content .featured-info {
+    display: none;
+  }
   .featured-area .container-fluid .tab-content .tab-pane .swiper .swiper-pagination-clickable span {
     background-color: rgb(250, 0, 0);
+  }
+  .passwordHelp {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  .passwordHelp .loginOption {
+    font-size: 80%;
+  }
+  .passwordHelp .loginOption:hover {
+    color: #f0002a;
+    cursor: pointer;
   }
 }
 @media all and (min-width: 992px) {
@@ -114,5 +177,11 @@
   }
   .navbar .navbar-collapse .navbar-nav .nav-item > .nav-link {
     font-size: 20px;
+  }
+  .banner-area {
+    height: 60vh;
+  }
+  .banner-area .container-fluid .banner-img img {
+    content: url("/images/added_erik/home_banner_desktop.jpg");
   }
 }/*# sourceMappingURL=customCSS_erik.css.map */

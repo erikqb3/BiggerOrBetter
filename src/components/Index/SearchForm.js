@@ -6,6 +6,7 @@ import axios from "axios";
 import searchZoom from "../../../public/images/icon/search-zoom-in.svg";
 import locationIco from "../../../public/images/icon/location.svg";
 import globalIco from "../../../public/images/icon/global.svg";
+import searchIcon from"../../../public/images/icon/plush.svg"
 import CategoryFind from "./CategoryFind";
 import LocationFind from "./LocationFind";
 import { toast } from "react-hot-toast";
@@ -86,12 +87,12 @@ const SearchForm = () => {
 										categoryFind(e.target.value);
 									}}
 								/>
-								<Image
-									src={globalIco}
+								{/* <Image
+									src={searchIcon}
 									width="20"
 									height="20"
 									alt="global"
-								/>
+								/> */}
 
 								{categories.length > 0 && catSuggest && (
 									<CategoryFind
@@ -102,7 +103,7 @@ const SearchForm = () => {
 							</div>
 						</div>
 
-						<div className="col-lg-6 col-md-6 p-0">
+						{/* <div className="col-lg-6 col-md-6 p-0">
 							<div className="form-group position-relative">
 								<input
 									type="text"
@@ -128,19 +129,19 @@ const SearchForm = () => {
 									/>
 								)}
 							</div>
-						</div>
+						</div> */}
 					</div>
 				</div>
 				<div className="col-lg-3 ps-0">
 					<button type="submit" className="default-btn">
 						<span>
 							Search Now
-							<Image
+							{/* <Image
 								src={searchZoom}
 								width="20"
 								height="20"
 								alt="search"
-							/>
+							/> */}
 						</span>
 					</button>
 				</div>

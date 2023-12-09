@@ -36,6 +36,8 @@ Default Style
 body {
   font-size: 16px;
   font-family: "Readex Pro", sans-serif;
+  /* font-family:Georgia, 'Times New Roman', Times, serif;
+  font-weight: lighter; */
   color: #848484;
   font-weight: 400;
 }
@@ -1782,14 +1784,14 @@ Featured Area Style
   font-size: 18px;
 }
 
-.single-featured .featured-content .priceing li .tag {
+.single-featured .featured-content .pricing li .tag {
   padding: 5px 15px;
   border: 1px solid #ebebeb;
   display: inline-block;
   border-radius: 5px;
 }
 
-.single-featured .featured-content .priceing li .tag:hover {
+.single-featured .featured-content .pricing li .tag:hover {
   border-color: #ffffff;
   background-color: #ffffff;
   -webkit-box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
@@ -1797,7 +1799,7 @@ Featured Area Style
   color: #424F50;
 }
 
-.single-featured .featured-content .priceing li .price {
+.single-featured .featured-content .pricing li .price {
   color: #424F50;
   font-size: 20px;
 }

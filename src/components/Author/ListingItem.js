@@ -52,7 +52,7 @@ const ListingItem = ({
 						</li>
 					</ul>
 
-					<ul className="priceing d-flex justify-content-between align-items-center">
+					<ul className="pricing d-flex justify-content-between align-items-center">
 						<li>
 							<Link
 								href={`/listings/?category=${category}`}

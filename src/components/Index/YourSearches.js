@@ -6,7 +6,7 @@ import axios from "axios";
 import FeaturedItem from "./FeaturedItem";
 import { toast } from "react-hot-toast";
 
-const Featured = ({ currentUser }) => {
+const YourSearches = ({ currentUser }) => {
 	const [listings, setListings] = useState([]);
 	const [cat, setCat] = useState("all");
 
@@ -37,14 +37,14 @@ const Featured = ({ currentUser }) => {
 			});
 	};
 	return (
-		<div className="offer-area bg-color-fffcf8 featured-ads">
+		<div className="offer-area bg-color-fffcf8">
 			<div className="container">
 				<div className="section-title-wrap">
 					<div className="section-title left-title">
-						<h2>Featured Ads</h2>
+						<h2>Your Searches</h2>
 					</div>
 
-					<div className="section-title-right">
+					{/* <div className="section-title-right">
 						<ul className="nav nav-tabs featured-tabs">
 							<li className="nav-item">
 								<button
@@ -108,7 +108,7 @@ const Featured = ({ currentUser }) => {
 								</button>
 							</li>
 						</ul>
-					</div>
+					</div> */}
 				</div>
 			</div>
 
@@ -153,4 +153,4 @@ const Featured = ({ currentUser }) => {
 	);
 };
 
-export default Featured;
+export default YourSearches;

@@ -3,12 +3,14 @@ import Blog from "@/components/Index/Blog";
 import Category from "@/components/Index/Category";
 import Favour from "@/components/Index/Favour";
 import Featured from "@/components/Index/Featured";
-import Locations from "@/components/Index/Locations";
+import Patrons from "@/components/Index/Patrons";
 import Partner from "@/components/Index/Partner";
 import Subscribe from "@/components/Index/Subscribe";
+import Suggestions from "@/components/Index/Suggestions";
 import Testimony from "@/components/Index/Testimony";
 import OtherTraders from "@/components/Index/OtherTraders";
 import WorkArea from "@/components/Index/WorkArea";
+import YourSearches from "@/components/Index/YourSearches";
 import { getCurrentUser } from "@/actions/getCurrentUser";
 import getBlogPosts from "@/actions/getBlogPosts";
 import getAllUsers from "@/actions/getAllUser";
@@ -25,11 +27,13 @@ export default async function Home() {
 		<>
 			<Banner />
 			{/* <Category /> */}
+			<YourSearches currentUser={currentUser}/>
+			<Suggestions currentUser={currentUser}/>
 			<Featured currentUser={currentUser} />
-			<Locations />
+			<Patrons />
 			<OtherTraders allUsers={allUsers}/>
 			{/* <WorkArea /> */}
-			<Testimony />
+			{/* <Testimony /> */}
 			{/* <Favour /> */}
 			{/* <Partner /> */}
 			<Subscribe />

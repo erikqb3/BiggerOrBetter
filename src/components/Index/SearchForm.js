@@ -20,11 +20,22 @@ const SearchForm = () => {
 	const [LocationValue, setLocationValue] = useState("");
 	const router = useRouter();
 
+	const [titles, setTitles] = useState([]);
+	const [title, setTitle] = useState('');
+	const [ttleSuggest, setTtleSuggest] = useState(false);
+
+
+	// const handleSearch = useCallback(() => {
+	// 	router.push(
+	// 		`/listings?category=${category}&location_value=${LocationValue}`
+	// 	);
+	// }, [category, LocationValue, router]);
+
 	const handleSearch = useCallback(() => {
 		router.push(
-			`/listings?category=${category}&location_value=${LocationValue}`
+			`/listings?title=${title}`
 		);
-	}, [category, LocationValue, router]);
+	}, [title, router]);
 
 	const handleCategorySelect = (cat) => {
 		setCatSuggest(false);
@@ -33,6 +44,10 @@ const SearchForm = () => {
 	const handleLocationSelect = (loc) => {
 		setLocSuggest(false);
 		setLocationValue(loc);
+	};
+	const handleTitleSelect = (ttle) => {
+		setTtleSuggest(false);
+		setTitle(ttle);
 	};
 
 	const categoryFind = useCallback((catValue) => {
@@ -43,7 +58,7 @@ const SearchForm = () => {
 					setCategories(response.data);
 				})
 				.catch((error) => {
-					toast.error("Something went wromg!");
+					toast.error("Something went wrong!");
 				});
 
 			setCatSuggest(true);
@@ -61,6 +76,20 @@ const SearchForm = () => {
 				});
 
 			setLocSuggest(true);
+		}
+	}, []);
+	const titleFind = useCallback((ttleValue) => {
+		if (ttleValue) {
+			axios
+				.get(`/api/titles/${ttleValue}`)
+				.then((response) => {
+					setCategories(response.data);
+				})
+				.catch((error) => {
+					toast.error("Something went wromg!");
+				});
+
+			setTtleSuggest(true);
 		}
 	}, []);
 
@@ -81,10 +110,10 @@ const SearchForm = () => {
 									type="text"
 									className="form-control"
 									placeholder="Type what are you looking for..."
-									value={category}
+									value={title}
 									onChange={(e) => {
-										setCategory(e.target.value);
-										categoryFind(e.target.value);
+										setTitle(e.target.value);
+										titleFind(e.target.value);
 									}}
 								/>
 								{/* <Image
@@ -94,12 +123,12 @@ const SearchForm = () => {
 									alt="global"
 								/> */}
 
-								{categories.length > 0 && catSuggest && (
+								{/* {categories.length > 0 && catSuggest && (
 									<CategoryFind
 										categories={categories}
 										onSelect={handleCategorySelect}
 									/>
-								)}
+								)} */}
 							</div>
 						</div>
 

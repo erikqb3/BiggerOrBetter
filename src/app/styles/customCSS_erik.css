@@ -360,15 +360,23 @@
     padding: 60px 0 0 0;
     margin: 0 auto;
   }
+  .offer-area.featured-ads .container .section-title-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
   .offer-area.featured-ads .container .section-title-wrap .left-title,
   .offer-area.featured-ads .container .section-title-wrap .section-title-right {
-    flex-direction: row;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0;
   }
   .offer-area.featured-ads .container .section-title-wrap .left-title h2,
   .offer-area.featured-ads .container .section-title-wrap .section-title-right h2 {
     margin-bottom: 10px;
+  }
+  .offer-area.featured-ads .container .section-title-wrap .left-title ul li button,
+  .offer-area.featured-ads .container .section-title-wrap .section-title-right ul li button {
+    padding: 10px 15px;
   }
 }/*# sourceMappingURL=customCSS_erik.css.map */

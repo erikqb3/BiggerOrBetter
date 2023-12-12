@@ -10,6 +10,7 @@ const Featured = ({ currentUser }) => {
 	const [listings, setListings] = useState([]);
 	const [cat, setCat] = useState("all");
 
+
 	useEffect(() => {
 		const fetchData = async () => {
 			await axios

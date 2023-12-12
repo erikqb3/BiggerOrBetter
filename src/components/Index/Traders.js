@@ -14,16 +14,113 @@ import starHIcon from "../../../public/images/icon/star-h.svg";
 import shape1 from "../../../public/images/shape-1.png";
 import shape2 from "../../../public/images/shape-2.png";
 
-const Patrons = () => {
+const Traders = ({ allUsers }) => {
+	let numbers = [1,2,3,4,5,6,7,8,9,0]
+	let displayTraders = [];
+	function shuffle(array) {
+	let currentIndex = array.length, randomIndex;
+
+	while (currentIndex > 0){
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex --;
+
+		[array[currentIndex], array[randomIndex]] = [
+			array[randomIndex], array[currentIndex]];
+		}
+		return array;
+	}
+
+	if (allUsers.length < 12){
+		displayTraders = allUsers;
+	}
+	else{
+		// let shuffledArray = shuffle(allUsers); //causes problems with loading
+		for (let i = 0; i < 12; i++){
+			displayTraders.push(allUsers[i]);
+		}
+	}
+	console.log("Hellow", shuffle(numbers)[0])
 	return (
+		// <h1>Hellow</h1>
 		<div className="location-area ptb-100">
 			<div className="container for-shape">
 				<div className="section-title">
-					<h2>Top Patrons</h2>
+					<h2>Featured Traders</h2>
 				</div>
 
 				<div className="row justify-content-center">
-					<div className="col-lg-4 col-sm-6">
+					{/* Put for Loop here ` */}
+
+		
+					{
+						displayTraders.map(trader => (
+							<div key ={trader.id} className="col-lg-4 col-sm-6">
+								<div className="single-location d-flex align-items-center">
+									<Image
+										src={location1}
+										width={115}
+										height={115}
+										alt="locations"
+									/>
+
+									<div className="location-content">
+										<h3>{trader.name}</h3>
+										<span>New York Upper West Side </span>
+
+										{/* <ul>
+											<li>
+												<Image
+													src={starIcon}
+													width="16"
+													height="16"
+													alt="locations"
+												/>
+											</li>
+											<li>
+												<Image
+													src={starIcon}
+													width="16"
+													height="16"
+													alt="locations"
+												/>
+											</li>
+											<li>
+												<Image
+													src={starIcon}
+													width="16"
+													height="16"
+													alt="locations"
+												/>
+											</li>
+											<li>
+												<Image
+													src={starIcon}
+													width="16"
+													height="16"
+													alt="locations"
+												/>
+											</li>
+											<li>
+												<Image
+													src={starHIcon}
+													width="17"
+													height="16"
+													alt="locations"
+												/>
+											</li>
+										</ul> */}
+									</div>
+
+									<Link href={`/author/${trader.id}`} className="map-link"></Link>
+								</div>
+							</div>
+
+
+						))
+						// displayTHIS
+					}
+
+					{/* <div className="col-lg-4 col-sm-6">
 						<div className="single-location d-flex align-items-center">
 							<Image
 								src={location1}
@@ -752,13 +849,13 @@ const Patrons = () => {
 
 							<Link href="/listings" className="map-link"></Link>
 						</div>
-					</div>
+					</div> */}
 
 					<div className="col-lg-12">
 						<p className="all-categories mt-20">
 							See Other{" "}
 							<Link href="/listings" className="read-more active">
-								Patrons{" "}
+								Traders{" "}
 								<i className="ri-arrow-right-line"></i>
 							</Link>
 						</p>
@@ -784,4 +881,4 @@ const Patrons = () => {
 	);
 };
 
-export default Patrons;
+export default Traders;

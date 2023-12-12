@@ -7,7 +7,7 @@ import { Navigation, Mousewheel } from "swiper";
 import { formatDateBlog } from "@/utils/formatDate";
 
 const OtherTraders = ({ allUsers }) => {
-  // console.log(allUsers);
+  console.log(allUsers);
 	let limit = 6;
 	let max = allUsers.length-limit;
 	let startingPoint =Math.floor(Math.random() * max);

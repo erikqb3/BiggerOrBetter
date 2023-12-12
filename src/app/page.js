@@ -3,7 +3,7 @@ import Blog from "@/components/Index/Blog";
 import Category from "@/components/Index/Category";
 import Favour from "@/components/Index/Favour";
 import Featured from "@/components/Index/Featured";
-import Patrons from "@/components/Index/Patrons";
+import Traders from "@/components/Index/Traders";
 import Partner from "@/components/Index/Partner";
 import Subscribe from "@/components/Index/Subscribe";
 import Suggestions from "@/components/Index/Suggestions";
@@ -21,8 +21,6 @@ export default async function Home() {
 	const currentUser = await getCurrentUser();
 	const blogPosts = await getBlogPosts(limitParams);
 	const allUsers = await getAllUsers();
-	// console.log("Hellow Honest!")
-	console.log(allUsers);
 	return (
 		<>
 			<Banner />
@@ -30,8 +28,8 @@ export default async function Home() {
 			<YourSearches currentUser={currentUser}/>
 			<Suggestions currentUser={currentUser}/>
 			<Featured currentUser={currentUser} />
-			<Patrons />
-			<OtherTraders allUsers={allUsers}/>
+			<Traders allUsers={allUsers}/>
+			{/* <OtherTraders allUsers={allUsers}/> */}
 			{/* <WorkArea /> */}
 			{/* <Testimony /> */}
 			{/* <Favour /> */}

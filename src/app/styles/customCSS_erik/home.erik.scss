@@ -515,16 +515,25 @@
     }
     &.featured-ads{
       .container{
+        
         .section-title-wrap{
+          display:flex;
+          flex-direction: row;
+          justify-content: space-between;
           .left-title,
           .section-title-right{
-            flex-direction: row;
-              text-align:center;
-              align-items:center;
-              justify-content:center;
-              h2{
-                margin-bottom: 10px;
+            width: fit-content;
+            margin:0;
+            h2{
+              margin-bottom: 10px;
+            }
+            ul{
+              li{
+                button{
+                  padding: 10px 15px;
+                }
               }
+            }
           }
         }
       }

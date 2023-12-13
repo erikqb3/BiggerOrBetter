@@ -45,7 +45,7 @@ const Traders = ({ allUsers }) => {
 		<div className="location-area ptb-100">
 			<div className="container for-shape">
 				<div className="section-title">
-					<h2>Featured Traders</h2>
+					<h2>Fellow Traders</h2>
 				</div>
 
 				<div className="row justify-content-center">

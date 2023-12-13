@@ -23,7 +23,7 @@ const Banner = () => {
 
 					<ul className="src-tag">
 						<li>
-							<span>Popular Search:</span>
+							<span>Search by Category:</span>
 						</li>
 						{categories.slice(0, 7).map((cat) => (
 							<li key={cat.label}>

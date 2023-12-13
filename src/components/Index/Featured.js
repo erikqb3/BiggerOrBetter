@@ -42,7 +42,7 @@ const Featured = ({ currentUser }) => {
 			<div className="container">
 				<div className="section-title-wrap">
 					<div className="section-title left-title">
-						<h2>Featured Ads</h2>
+						<h2>Featured Trades</h2>
 					</div>
 
 					<div className="section-title-right">

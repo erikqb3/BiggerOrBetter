@@ -39,7 +39,8 @@ const Traders = ({ allUsers }) => {
 			displayTraders.push(allUsers[i]);
 		}
 	}
-	console.log("Hellow", shuffle(numbers)[0])
+
+	console.log(displayTraders)
 	return (
 		// <h1>Hellow</h1>
 		<div className="location-area ptb-100">

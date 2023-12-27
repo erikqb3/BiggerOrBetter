@@ -11,6 +11,7 @@ export async function getCurrentUser() {
 		const session = await getCurrentSession();
 
 		if (!session?.user?.email) {
+			console.log("HELLOW")
 			return null;
 		}
 
@@ -19,13 +20,13 @@ export async function getCurrentUser() {
 				email: session.user.email,
 			},
 			include: {
-				profile: true,
-				listings: true,
-				favourites: true,
-				reviews: true,
-				// history: true,
+				// profile: true,
+				// listings: true,
+				// favourites: true,
+				// reviews: true,
+
 				// myhistory: true,
-				// myhistory: {
+				// history: {
 				// 	select: {
 				// 		listingId: true,
 				// 	}
@@ -39,9 +40,10 @@ export async function getCurrentUser() {
 		
 		return {
 			...currentUser,
-			created_at: currentUser.created_at.toISOString(),
-			updated_at: currentUser.created_at.toISOString(),
-			emailVerified: currentUser.created_at.toISOString() || null,
+			
+			// created_at: currentUser.created_at.toISOString(),
+			// updated_at: currentUser.created_at.toISOString(),
+			// emailVerified: currentUser.created_at.toISOString() || null,
 		};
 	} catch (error) {
 		return null;

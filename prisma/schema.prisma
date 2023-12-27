@@ -28,7 +28,7 @@ model User {
     reviews        Review[]
     blogs          Blog[]
     myhistory      String?
-    history      History[]
+    history        History[]
 }
 
 model Profile {

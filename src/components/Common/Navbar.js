@@ -89,7 +89,7 @@ const Navbar = ({ currentUser }) => {
 											Listing
 										</Link>
 									</li>
-									<li className="nav-item">
+									{/* <li className="nav-item">
 										<Link
 											href="/about-us"
 											className={`nav-link ${
@@ -98,7 +98,7 @@ const Navbar = ({ currentUser }) => {
 										>
 											About Us
 										</Link>
-									</li>
+									</li> */}
 									<li className="nav-item">
 										<Link
 											href="/faq"
@@ -106,7 +106,7 @@ const Navbar = ({ currentUser }) => {
 												currentRoute === "/faq" ? "active" : "non-active"
 											}`}
 										>
-											Faq
+											FAQ
 										</Link>
 									</li>
 									{/* <li className="nav-item">
@@ -121,13 +121,21 @@ const Navbar = ({ currentUser }) => {
 									</li> */}
 
 									<li className="nav-item">
-										<Link
+										{/* <Link
 											href="/contact-us"
 											className={`nav-link ${
 												currentRoute === "/contact-us" ? "active" : "non-active"
 											}`}
 										>
 											Contact Us
+										</Link> */}
+										<Link
+											href="/contact-us"
+											className={`nav-link ${
+												currentRoute === "/contact-us" ? "active" : "non-active"
+											}`}
+										>
+											Shop
 										</Link>
 									</li>
 								</ul>

@@ -10,6 +10,8 @@ const YourSearches = ({ currentUser }) => {
 	const [listings, setListings] = useState([]);
 	const [cat, setCat] = useState("all");
 
+	console.log(currentUser)
+
 	useEffect(() => {
 		const fetchData = async () => {
 			await axios

@@ -40,7 +40,12 @@ const Traders = ({ allUsers }) => {
 		}
 	}
 
-	console.log(displayTraders)
+	// console.log(displayTraders);
+
+
+	displayTraders.forEach(i => {
+		// console.log(i.searchHistory)
+	});
 	return (
 		// <h1>Hellow</h1>
 		<div className="location-area ptb-100">

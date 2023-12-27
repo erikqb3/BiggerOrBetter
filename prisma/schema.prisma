@@ -27,6 +27,7 @@ model User {
     favourites     Favourite[]
     reviews        Review[]
     blogs          Blog[]
+    history        String?
 }
 
 model Profile {

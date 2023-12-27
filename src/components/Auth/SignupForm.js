@@ -26,11 +26,14 @@ const SignupForm = () => {
 			name: "",
 			email: "",
 			password: "",
+			searchHistory: "{}",
+			blah: "4"
 		},
 	});
 
 	const onSubmit = async (data) => {
 		setIsLoading(true);
+		console.log(data);
 		axios
 			.post("/api/register", data)
 			.then(() => {

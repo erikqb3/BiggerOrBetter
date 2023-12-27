@@ -12,6 +12,7 @@ export default async function getAllUsers() {
 			return null;
 		}
 
+		
 		return users;
 	} catch (error) {
 		throw new Error(error);

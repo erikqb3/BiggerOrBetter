@@ -20,15 +20,17 @@ export async function getCurrentUser() {
 			},
 			include: {
 				profile: true,
-				// listings: true,
+				listings: true,
 				favourites: true,
+				reviews: true,
+				// history: true
 			},
 		});
 
 		if (!currentUser) {
 			return null;
 		}
-
+		
 		return {
 			...currentUser,
 			created_at: currentUser.created_at.toISOString(),
@@ -36,6 +38,7 @@ export async function getCurrentUser() {
 			emailVerified: currentUser.created_at.toISOString() || null,
 		};
 	} catch (error) {
+		console.log(error);
 		return null;
 	}
 }

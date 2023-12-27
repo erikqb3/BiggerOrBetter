@@ -23,7 +23,7 @@ export async function getCurrentUser() {
 				listings: true,
 				favourites: true,
 				reviews: true,
-				// history: true
+				myhistory: true
 			},
 		});
 
@@ -38,7 +38,6 @@ export async function getCurrentUser() {
 			emailVerified: currentUser.created_at.toISOString() || null,
 		};
 	} catch (error) {
-		console.log(error);
 		return null;
 	}
 }

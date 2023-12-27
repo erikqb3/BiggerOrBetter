@@ -35,7 +35,7 @@ export default async function Home() {
 			{/* <Favour /> */}
 			{/* <Partner /> */}
 			<Subscribe />
-			{/* <Blog blogPosts={blogPosts} /> */}
+			<Blog blogPosts={blogPosts} />
 		</>
 	);
 }

@@ -39,6 +39,7 @@ export default async function getBlogPosts(params) {
 			return null;
 		}
 
+		// console.log(blogPosts);
 		return blogPosts;
 	} catch (error) {
 		throw new Error(error);

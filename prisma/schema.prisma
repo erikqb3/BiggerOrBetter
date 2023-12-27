@@ -27,8 +27,8 @@ model User {
     favourites     Favourite[]
     reviews        Review[]
     blogs          Blog[]
-    history        String?
-    myhistory      MyHistory[]
+    myhistory      String?
+    history      History[]
 }
 
 model Profile {
@@ -102,7 +102,7 @@ model Favourite {
     @@index([userId, listingId])
 }
 
-model MyHistory {
+model History {
     id         Int      @id @default(autoincrement())
     userId     Int
     listingId  Int
@@ -136,6 +136,7 @@ model Blog {
     category   String
     userId     Int
     created_at DateTime @default(now())
+    Filler     Int
     user       User     @relation(fields: [userId], references: [id])
 
     @@index([userId])

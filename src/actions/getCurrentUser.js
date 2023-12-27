@@ -23,7 +23,13 @@ export async function getCurrentUser() {
 				listings: true,
 				favourites: true,
 				reviews: true,
-				myhistory: true
+				// history: true,
+				// myhistory: true,
+				// myhistory: {
+				// 	select: {
+				// 		listingId: true,
+				// 	}
+				// }
 			},
 		});
 

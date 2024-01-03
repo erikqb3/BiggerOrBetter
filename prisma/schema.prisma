@@ -27,8 +27,7 @@ model User {
     favourites     Favourite[]
     reviews        Review[]
     blogs          Blog[]
-    myhistory      String?
-    history        History[]
+    myHistory      String?
 }
 
 model Profile {
@@ -91,18 +90,6 @@ model Listing {
 }
 
 model Favourite {
-    id         Int      @id @default(autoincrement())
-    userId     Int
-    listingId  Int
-    created_at DateTime @default(now())
-
-    user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-    listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
-
-    @@index([userId, listingId])
-}
-
-model History {
     id         Int      @id @default(autoincrement())
     userId     Int
     listingId  Int

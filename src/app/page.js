@@ -12,14 +12,14 @@ import OtherTraders from "@/components/Index/OtherTraders";
 import WorkArea from "@/components/Index/WorkArea";
 import YourSearches from "@/components/Index/YourSearches";
 import { getCurrentUser } from "@/actions/getCurrentUser";
-import getBlogPosts from "@/actions/getBlogPosts";
+// import getBlogPosts from "@/actions/getBlogPosts";
 import getAllUsers from "@/actions/getAllUser";
 
 export const dynamic = "force-dynamic";
 const limitParams = { limit: 6 };
 export default async function Home() {
 	const currentUser = await getCurrentUser();
-	const blogPosts = await getBlogPosts(limitParams);
+	// const blogPosts = await getBlogPosts(limitParams);
 	const allUsers = await getAllUsers();
 	return (
 		<>
@@ -35,7 +35,7 @@ export default async function Home() {
 			{/* <Favour /> */}
 			{/* <Partner /> */}
 			<Subscribe />
-			<Blog blogPosts={blogPosts} />
+			{/* <Blog blogPosts={blogPosts} /> */}
 		</>
 	);
 }

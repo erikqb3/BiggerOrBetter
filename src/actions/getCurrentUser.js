@@ -20,10 +20,10 @@ export async function getCurrentUser() {
 				email: session.user.email,
 			},
 			include: {
-				// profile: true,
-				// listings: true,
-				// favourites: true,
-				// reviews: true,
+				profile: true,
+				listings: true,
+				favourites: true,
+				reviews: true,
 
 				// myhistory: true,
 				// history: {

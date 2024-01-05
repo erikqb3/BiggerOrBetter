@@ -38,6 +38,7 @@ const SettingsForm = ({ currentUser }) => {
 	const image = watch("image");
 
 	const onSubmit = (data) => {
+		console.log(data);
 		setIsLoading(true);
 		axios
 			.post("/api/profile/settings", data)

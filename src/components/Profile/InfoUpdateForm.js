@@ -38,6 +38,7 @@ const InfoUpdateForm = ({ currentUser }) => {
 	});
 
 	const onSubmit = async (data) => {
+		console.log(data)
 		setIsLoading(true);
 		axios
 			.post("/api/profile/info", data)

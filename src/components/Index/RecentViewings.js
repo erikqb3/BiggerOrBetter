@@ -6,11 +6,14 @@ import axios from "axios";
 import FeaturedItem from "./FeaturedItem";
 import { toast } from "react-hot-toast";
 
-const YourSearches = ({ currentUser }) => {
+const RecentViewings = ({ currentUser }) => {
 	const [listings, setListings] = useState([]);
-	const [cat, setCat] = useState("all");
+	// const [cat, setCat] = useState("all");
+	let myHistory = currentUser.myHistory;
+	let myHistoryArray = myHistory.split(",")
 
-	console.log(currentUser)
+
+	console.log(myHistoryArray, myHistoryArray.length)
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -38,12 +41,13 @@ const YourSearches = ({ currentUser }) => {
 				toast.error("Something went wromg!");
 			});
 	};
+	
 	return (
 		<div className="offer-area bg-color-fffcf8">
 			<div className="container">
 				<div className="section-title-wrap">
 					<div className="section-title left-title">
-						<h2>Your Searches</h2>
+						<h2>Recent Viewings</h2>
 					</div>
 
 					{/* <div className="section-title-right">
@@ -155,4 +159,4 @@ const YourSearches = ({ currentUser }) => {
 	);
 };
 
-export default YourSearches;
+export default RecentViewings;

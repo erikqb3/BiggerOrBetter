@@ -10,7 +10,7 @@ import Suggestions from "@/components/Index/Suggestions";
 import Testimony from "@/components/Index/Testimony";
 import OtherTraders from "@/components/Index/OtherTraders";
 import WorkArea from "@/components/Index/WorkArea";
-import YourSearches from "@/components/Index/YourSearches";
+import RecentViewings from "@/components/Index/RecentViewings";
 import { getCurrentUser } from "@/actions/getCurrentUser";
 // import getBlogPosts from "@/actions/getBlogPosts";
 import getAllUsers from "@/actions/getAllUser";
@@ -25,7 +25,7 @@ export default async function Home() {
 		<>
 			<Banner />
 			{/* <Category /> */}
-			<YourSearches currentUser={currentUser}/>
+			<RecentViewings currentUser={currentUser}/>
 			<Suggestions currentUser={currentUser}/>
 			<Featured currentUser={currentUser} />
 			<Traders allUsers={allUsers}/>

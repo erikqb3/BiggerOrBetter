@@ -15,12 +15,22 @@ import { getCurrentUser } from "@/actions/getCurrentUser";
 // import getBlogPosts from "@/actions/getBlogPosts";
 import getAllUsers from "@/actions/getAllUser";
 
+
 export const dynamic = "force-dynamic";
 const limitParams = { limit: 6 };
 export default async function Home() {
 	const currentUser = await getCurrentUser();
 	// const blogPosts = await getBlogPosts(limitParams);
 	const allUsers = await getAllUsers();
+	
+	// console.log(currentUser);
+
+	// currentUser.myHistory.reverse().forEach(listing_id => {
+		
+	// });
+
+
+
 	return (
 		<>
 			<Banner />

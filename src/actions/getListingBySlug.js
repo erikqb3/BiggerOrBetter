@@ -1,6 +1,7 @@
 import prisma from "@/libs/prismadb";
 
 export default async function getListingBySlug(params) {
+	console.log(params);
 	try {
 		const { listingId, slug } = params;
 

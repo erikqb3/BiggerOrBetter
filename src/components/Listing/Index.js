@@ -25,12 +25,10 @@ const Index = ({ currentUser, listing, reviews }) => {
 	// 1) Check if History Exists
 	if (currentUser){
 		if (!myHistory_string){
-			console.log("No History")
 			myHistory_string = "";
 		}
 		// 1a)If Exists, add comma at the end for syntax and order
 		else {
-			console.log(myHistory_array.length)
 			myHistory_string = myHistory_string + ",";
 		}
 
@@ -66,7 +64,7 @@ const Index = ({ currentUser, listing, reviews }) => {
 
 		}
 		else {
-			console.log("Listing Not Added")
+			// console.log("Listing Not Added")
 		}
 	}
 	

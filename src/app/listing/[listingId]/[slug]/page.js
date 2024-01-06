@@ -3,7 +3,7 @@ import PageBanner from "@/components/Common/PageBanner";
 import getListingBySlug from "@/actions/getListingBySlug";
 import Listing from "@/components/Listing/Index";
 import { getCurrentUser } from "@/actions/getCurrentUser";
-import getReviewByListingId from "@/actions/getReviewsByListingId";
+
 
 export const generateMetadata = ({ params }) => {
 	return {
@@ -12,6 +12,7 @@ export const generateMetadata = ({ params }) => {
 };
 
 const page = async ({ params }) => {
+	console.log(params)
 	const listing = await getListingBySlug(params);
 	const currentUser = await getCurrentUser();
 	const reviews = await getReviewByListingId(params);

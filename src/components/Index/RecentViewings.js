@@ -5,15 +5,28 @@ import { Pagination, Navigation } from "swiper";
 import axios from "axios";
 import FeaturedItem from "./FeaturedItem";
 import { toast } from "react-hot-toast";
+// import getListingById from "@/actions/getListingById";
 
 const RecentViewings = ({ currentUser }) => {
 	const [listings, setListings] = useState([]);
 	// const [cat, setCat] = useState("all");
 	let myHistory = currentUser.myHistory;
-	let myHistoryArray = myHistory.split(",")
+	let myHistory_array = myHistory.split(",")
+	let myHistory_listings = []
 
 
-	console.log(myHistoryArray, myHistoryArray.length)
+	// console.log(myHistory_array.reverse(), myHistory_array.length)
+	myHistory_array = myHistory_array.reverse();
+	
+	myHistory_array.forEach(id => {
+		// consolog(getListingById(id));	
+	});
+
+
+	console.log(
+		listings,
+		myHistory_array
+	)
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -49,72 +62,6 @@ const RecentViewings = ({ currentUser }) => {
 					<div className="section-title left-title">
 						<h2>Recent Viewings</h2>
 					</div>
-
-					{/* <div className="section-title-right">
-						<ul className="nav nav-tabs featured-tabs">
-							<li className="nav-item">
-								<button
-									className={`nav-link default-btn ${
-										cat === "all" && "active"
-									}`}
-									onClick={() => getFeatured("all")}
-								>
-									Most Recent
-								</button>
-							</li>
-							<li className="nav-item">
-								<button
-									className={`nav-link default-btn ${
-										cat === "Automotive" && "active"
-									}`}
-									onClick={() => getFeatured("Automotive")}
-								>
-									Automotive
-								</button>
-							</li>
-							<li className="nav-item">
-								<button
-									className={`nav-link default-btn ${
-										cat === "Apparel" && "active"
-									}`}
-									onClick={() => getFeatured("Apparel")}
-								>
-									Apparel
-								</button>
-							</li>
-
-							<li className="nav-item">
-								<button
-									className={`nav-link default-btn ${
-										cat === "Electronics" && "active"
-									}`}
-									onClick={() => getFeatured("Electronics")}
-								>
-									Electronics
-								</button>
-							</li>
-							<li className="nav-item">
-								<button
-									className={`nav-link default-btn ${
-										cat === "Entertainment" && "active"
-									}`}
-									onClick={() => getFeatured("Entertainment")}
-								>
-									Entertainment
-								</button>
-							</li>
-							<li className="nav-item">
-								<button
-									className={`nav-link default-btn ${
-										cat === "Family" && "active"
-									}`}
-									onClick={() => getFeatured("Family")}
-								>
-									Family
-								</button>
-							</li>
-						</ul>
-					</div> */}
 				</div>
 			</div>
 

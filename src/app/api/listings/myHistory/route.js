@@ -1,10 +1,28 @@
 import { NextResponse } from "next/server";
 import prisma from "@/libs/prismadb";
+import { getCurrentUser } from "@/actions/getCurrentUser";
 
-export async function GET(request) {
-	// const category = request.nextUrl.searchParams.get("category");
+export async function POST(request) {
+	const currentUser = await getCurrentUser();
+	if (!currentUser) {
+		return NextResponse.json(
+			{ message: "Authentication faild!" },
+			{ status: 401 }
+		);
+	}
 
-	let listings;
+	const body = await request.json();
+
+	// const { myHistory } = body;
+
+	// let profile = await prisma.user.update({
+	// 	where: {
+	// 		id: currentUser.id,
+	// 	},
+	// 	data: {
+	// 		myHistory
+	// 	},
+	// });
 
 	listings = await prisma.listing.findUnique({
 		where: {
@@ -23,5 +41,5 @@ export async function GET(request) {
 		},
 	});
 
-	return NextResponse.json(listings);
+	return NextResponse.json(profile);
 }

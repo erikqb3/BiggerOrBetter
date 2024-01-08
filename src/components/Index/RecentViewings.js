@@ -9,26 +9,16 @@ import { toast } from "react-hot-toast";
 
 const RecentViewings = ({ currentUser }) => {
 	const [listings, setListings] = useState([]);
-	// const [cat, setCat] = useState("all");
-	let myHistory = currentUser.myHistory;
-	let myHistory_array = myHistory.split(",")
-	let myHistory_listings = []
-
-
-	// console.log(myHistory_array.reverse(), myHistory_array.length)
-	myHistory_array = myHistory_array.reverse();
-	
-	myHistory_array.forEach(id => {
-		// consolog(getListingById(id));	
-	});
-
-
-	console.log(
-		listings,
-		myHistory_array
-	)
-
+	const [myHistory_listings, setMyHistory_listings] = useState([]);
+	// let myHistory = currentUser.myHistory;
+	let myHistory_array = currentUser.myHistory.split(",").reverse();
+ let smallArray = [];
 	useEffect(() => {
+
+	// const [cat, setCat] = useState("all");
+
+
+
 		const fetchData = async () => {
 			await axios
 				.get(`/api/listings/featured?category=all`)
@@ -40,8 +30,51 @@ const RecentViewings = ({ currentUser }) => {
 				});
 		};
 
+
+		
+		// const fetchData = async () => {
+			// await myHistory_array.forEach(id => {
+			// 	axios
+			// 		.get(`/api/listings/myHistory/${id}`)
+			// 		.then((response) => {
+			// 			console.log(response)
+			// 			setMyHistory_listings(myHistoryresponse.data);
+			// 		})
+			// 		.catch((error) => {
+			// 			toast.error("Something went wromg!");
+			// 		});
+
+			// });
+		// };
+
+
+		// myHistory_array.forEach(id => {
+		// 	console.log("Hellow")
+
+		// 	// consolog(getListingById(id));	
+		// 	// myHistory_listings.push(
+		// 	//  axios
+		// 	// 	.get(`/api/listings/myHistory`, id)
+		// 	// 	.then((response) => {
+		// 	// 		setListings(response.data);
+		// 	// 	})
+		// 	// 	.catch((error) => {
+		// 	// 		toast.error("Something went wromg!");
+		// 	// 	})
+		// 	// )
+		// });
+		
+		console.log("Hellow")
+		
 		fetchData();
 	}, []);
+	
+	
+	console.log(
+		listings,
+		myHistory_array
+	)
+	
 
 	const getFeatured = async (cat) => {
 		setCat(cat);

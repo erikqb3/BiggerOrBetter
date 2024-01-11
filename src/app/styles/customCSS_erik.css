@@ -246,6 +246,16 @@
     color: #f0002a;
     cursor: pointer;
   }
+  body .shop .container-fluid .tab-content .tab-pane .swiper .swiper-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  body .shop .container-fluid .tab-content .tab-pane .swiper .swiper-wrapper .swiper-slide {
+    margin: 0 auto !important;
+  }
+  body .shop .container-fluid .tab-content .tab-pane .swiper .swiper-pagination {
+    display: none;
+  }
 }
 @media all and (min-width: 760px) {
   .banner-area .container-fluid .banner-content h1 {

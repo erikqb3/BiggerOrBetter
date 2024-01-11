@@ -17,12 +17,14 @@
 @import "./customCSS_erik/index.erik";
 @import "./customCSS_erik/home.erik";
 @import "./customCSS_erik/login.erik";
+@import "./customCSS_erik/shop.erik";
 
 
 @media all and (min-width: 0px) {
- @include mobileIndex;
- @include mobileHome;
- @include mobileLogin;
+ @include mobIndex;
+ @include mobHome;
+ @include mobLogin;
+ @include mobShop;
 }
 @media all and (min-width: 760px) {
   @include minIndex;

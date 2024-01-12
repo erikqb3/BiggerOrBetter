@@ -126,10 +126,10 @@ const Suggestions = ({ currentUser }) => {
 									slidesPerView: 2,
 								},
 								768: {
-									slidesPerView: 4,
+									slidesPerView: 3,
 								},
 								1200: {
-									slidesPerView: 6,
+									slidesPerView: 5,
 								},
 							}}
 							navigation={true}

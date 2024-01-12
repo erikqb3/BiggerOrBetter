@@ -11,34 +11,41 @@ import { useRouter } from "next/navigation";
 const SearchForm = ({ searchParams }) => {
 	const [category, setCategory] = useState("");
 	const [locationValue, setLocationValue] = useState("");
+
+
+	const [titles, setTitles] = useState([]);
+	const [title, setTitle] = useState('');
+	const [titleSuggest, setTitleSuggest] = useState(false);
 	const router = useRouter();
 
 	useEffect(() => {
-		const { category, location_value } = searchParams;
-		setCategory(category);
-		setLocationValue(location_value);
+		// const { category, location_value } = searchParams;
+		// console.log(searchParams)
+		// setCategory(category);
+		// setLocationValue(location_value);
+		
+		const { title } = searchParams;
+		setTitle(title);
 	}, [searchParams]);
 
 	const handleSearch = useCallback(() => {
 		router.push(
-			`/listings?category=${category || ""}&location_value=${
-				locationValue || ""
-			}`
+			`/listings?title=${title || ""}`
 		);
-	}, [category, locationValue]);
+	}, [title]);
 
 	return (
 		<div className="page-banner-area pt-100 pb-70">
 			<div className="container">
 				<div className="page-banner-content">
-					<ul className="text-center">
+					{/* <ul className="text-center">
 						<li>
 							<Link href="/">Home</Link>
 						</li>
 						<li>
 							<span>Listings</span>
 						</li>
-					</ul>
+					</ul> */}
 
 					<h2 className="text-center">Search</h2>
 
@@ -56,20 +63,20 @@ const SearchForm = ({ searchParams }) => {
 										type="text"
 										className="form-control"
 										placeholder="Type what are you looking for..."
-										value={category}
+										value={title}
 										onChange={(e) =>
-											setCategory(e.target.value)
+											setTitle(e.target.value)
 										}
 									/>
-									<Image
+									{/* <Image
 										src={globalIco}
 										width="20"
 										height="20"
 										alt="global"
-									/>
+									/> */}
 								</div>
 							</div>
-							<div className="col-lg-6 col-md-6">
+							{/* <div className="col-lg-6 col-md-6">
 								<div className="form-group">
 									<input
 										type="text"
@@ -87,7 +94,7 @@ const SearchForm = ({ searchParams }) => {
 										alt="location"
 									/>
 								</div>
-							</div>
+							</div> */}
 
 							<div className="col-lg-4">
 								<div className="form-group">

@@ -6,6 +6,7 @@ import clockSvg from "../../../public/images/icon/clock.svg";
 import profileSvg from "../../../public/images/icon/profile.svg";
 import { formattedPrice } from "@/utils/formattedPrice";
 import { formatDate } from "@/utils/formatDate";
+import shorten from "@/utils/shorten";
 import HeartButton from "../HeartButton";
 
 const FeaturedItem = ({
@@ -20,6 +21,10 @@ const FeaturedItem = ({
 	created_at,
 	currentUser,
 }) => {
+
+	let shorten_array = shorten(title,price)
+
+
 	return (
 		<div className="single-featured">
 			<Link href={`/listing/${id}/${slug}`} className="feature-img">
@@ -29,7 +34,7 @@ const FeaturedItem = ({
 			<div className="featured-content">
 				<div className="d-flex justify-content-between align-items-center">
 					<h3>
-						<Link href={`/listing/${id}/${slug}`}>{title}</Link>
+						<Link href={`/listing/${id}/${slug}`}>{shorten_array[0]}</Link>
 					</h3>
 					<HeartButton currentUser={currentUser} listingId={id} />
 				</div>
@@ -74,7 +79,7 @@ const FeaturedItem = ({
 						</Link>
 					</li>
 					<li>
-						<span className="price">{formattedPrice(price)}</span>
+						<span className="price">{shorten_array[1]}</span>
 					</li>
 				</ul>
 			</div>

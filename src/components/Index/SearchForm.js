@@ -12,12 +12,12 @@ import LocationFind from "./LocationFind";
 import { toast } from "react-hot-toast";
 
 const SearchForm = () => {
-	const [categories, setCategories] = useState([]);
-	const [locations, setLocations] = useState([]);
-	const [category, setCategory] = useState("");
-	const [catSuggest, setCatSuggest] = useState(false);
-	const [locSuggest, setLocSuggest] = useState(false);
-	const [LocationValue, setLocationValue] = useState("");
+	// const [categories, setCategories] = useState([]);
+	// const [locations, setLocations] = useState([]);
+	// const [category, setCategory] = useState("");
+	// const [catSuggest, setCatSuggest] = useState(false);
+	// const [locSuggest, setLocSuggest] = useState(false);
+	// const [LocationValue, setLocationValue] = useState("");
 	const router = useRouter();
 
 	const [titles, setTitles] = useState([]);
@@ -37,47 +37,47 @@ const SearchForm = () => {
 		);
 	}, [title, router]);
 
-	const handleCategorySelect = (cat) => {
-		setCatSuggest(false);
-		setCategory(cat);
-	};
-	const handleLocationSelect = (loc) => {
-		setLocSuggest(false);
-		setLocationValue(loc);
-	};
+	// const handleCategorySelect = (cat) => {
+	// 	setCatSuggest(false);
+	// 	setCategory(cat);
+	// };
+	// const handleLocationSelect = (loc) => {
+	// 	setLocSuggest(false);
+	// 	setLocationValue(loc);
+	// };
 	const handleTitleSelect = (ttle) => {
 		setTitleSuggest(false);
 		setTitle(ttle);
 	};
 
-	const categoryFind = useCallback((catValue) => {
-		if (catValue) {
-			axios
-				.get(`/api/categories/${catValue}`)
-				.then((response) => {
-					setCategories(response.data);
-				})
-				.catch((error) => {
-					toast.error("Something went wrong!");
-				});
+	// const categoryFind = useCallback((catValue) => {
+	// 	if (catValue) {
+	// 		axios
+	// 			.get(`/api/categories/${catValue}`)
+	// 			.then((response) => {
+	// 				setCategories(response.data);
+	// 			})
+	// 			.catch((error) => {
+	// 				toast.error("Something went wrong!");
+	// 			});
 
-			setCatSuggest(true);
-		}
-	}, []);
-	const locationFind = useCallback((locValue) => {
-		if (locValue) {
-			axios
-				.get(`/api/categories/location/${locValue}`)
-				.then((response) => {
-					setLocations(response.data);
-				})
-				.catch((error) => {
-					toast.error("Something went wromg!");
-				});
+	// 		setCatSuggest(true);
+	// 	}
+	// }, []);
+	// const locationFind = useCallback((locValue) => {
+	// 	if (locValue) {
+	// 		axios
+	// 			.get(`/api/categories/location/${locValue}`)
+	// 			.then((response) => {
+	// 				setLocations(response.data);
+	// 			})
+	// 			.catch((error) => {
+	// 				toast.error("Something went wromg!");
+	// 			});
 
-			setLocSuggest(true);
-		}
-	}, []);
+	// 		setLocSuggest(true);
+	// 	}
+	// }, []);
 	const titleFind = useCallback((ttleValue) => {
 		if (ttleValue) {
 			axios

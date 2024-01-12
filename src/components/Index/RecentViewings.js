@@ -64,16 +64,16 @@ const RecentViewings = ({ currentUser }) => {
 		// 	// )
 		// });
 		
-		console.log("Hellow")
+		// console.log("Hellow")
 		
 		fetchData();
 	}, []);
 	
 	
-	console.log(
-		listings,
-		myHistory_array
-	)
+	// console.log(
+	// 	listings,
+	// 	myHistory_array
+	// )
 	
 
 	const getFeatured = async (cat) => {
@@ -112,10 +112,10 @@ const RecentViewings = ({ currentUser }) => {
 									slidesPerView: 2,
 								},
 								768: {
-									slidesPerView: 4,
+									slidesPerView: 3,
 								},
 								1200: {
-									slidesPerView: 6,
+									slidesPerView: 5,
 								},
 							}}
 							navigation={true}

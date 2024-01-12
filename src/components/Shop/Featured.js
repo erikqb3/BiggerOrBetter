@@ -7,11 +7,11 @@ import FeaturedItem from "./FeaturedItem";
 import { toast } from "react-hot-toast";
 
 const Featured = ({ currentUser, myListings,searchParams }) => {
-	console.log(myListings, searchParams)
+	// console.log(myListings, searchParams)
 	const [listings, setListings] = useState(myListings);
 	const [cat, setCat] = useState("all");
 
-	console.log(listings);
+	// console.log(listings);
 
 	// useEffect(() => {
 	// 	const fetchData = async () => {

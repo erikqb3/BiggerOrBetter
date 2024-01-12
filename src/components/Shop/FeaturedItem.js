@@ -6,6 +6,7 @@ import clockSvg from "../../../public/images/icon/clock.svg";
 import profileSvg from "../../../public/images/icon/profile.svg";
 import { formattedPrice } from "@/utils/formattedPrice";
 import { formatDate } from "@/utils/formatDate";
+import shorten from "@/utils/shorten";
 import HeartButton from "../HeartButton";
 
 const FeaturedItem = ({
@@ -85,31 +86,31 @@ const FeaturedItem = ({
 	);
 };
 
-const shorten = (title, price) =>{
-	let returnPackage = [];
-	let newTitle;
-	let newPrice;
-	let limit = 9;
+// const shorten = (title, price) =>{
+// 	let returnPackage = [];
+// 	let newTitle;
+// 	let newPrice;
+// 	let limit = 9;
 
-	if (title.length > limit){
-		newTitle = title.substr(0,limit) + "...";
-	}
-	else {
-		newTitle = title;
-	}
+// 	if (title.length > limit){
+// 		newTitle = title.substr(0,limit) + "...";
+// 	}
+// 	else {
+// 		newTitle = title;
+// 	}
 
-	// if (price > 1000){
-	// 	newPrice = "$" + (price.toPrecision(3));
-	// }
-	// else {
-	// 	newPrice = formattedPrice(price);
-	// }
-	newPrice = formattedPrice(price);
+// 	// if (price > 1000){
+// 	// 	newPrice = "$" + (price.toPrecision(3));
+// 	// }
+// 	// else {
+// 	// 	newPrice = formattedPrice(price);
+// 	// }
+// 	newPrice = formattedPrice(price);
 
 
-	returnPackage.push(newTitle);
-	returnPackage.push(newPrice)
-	return returnPackage;
-}
+// 	returnPackage.push(newTitle);
+// 	returnPackage.push(newPrice)
+// 	return returnPackage;
+// }
 
 export default FeaturedItem;

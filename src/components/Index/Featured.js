@@ -5,6 +5,7 @@ import { Pagination, Navigation } from "swiper";
 import axios from "axios";
 import FeaturedItem from "./FeaturedItem";
 import { toast } from "react-hot-toast";
+import shorten from "@/utils/shorten";
 
 const Featured = ({ currentUser }) => {
 	const [listings, setListings] = useState([]);
@@ -128,10 +129,10 @@ const Featured = ({ currentUser }) => {
 									slidesPerView: 2,
 								},
 								768: {
-									slidesPerView: 4,
+									slidesPerView: 3,
 								},
 								1200: {
-									slidesPerView: 6,
+									slidesPerView: 5,
 								},
 							}}
 							navigation={true}

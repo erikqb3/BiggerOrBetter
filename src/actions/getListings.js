@@ -7,11 +7,13 @@ export default async function getListings(params) {
 			location_value,
 			title,
 			page = 1,
-			pageSize = 9,
+			pageSize = 16,
 		} = params;
 
 		const parsedPage = parseInt(page, 10);
 		const parsedPageSize = parseInt(pageSize, 10);
+
+		// const parsedPageSize = Infinity;
 
 		let query = {};
 
@@ -44,8 +46,8 @@ export default async function getListings(params) {
 					},
 				],
 			},
-			skip: (parsedPage - 1) * parsedPageSize,
-			take: parsedPageSize,
+			// skip: (parsedPage - 1) * parsedPageSize,
+			// take: parsedPageSize,
 			orderBy: {
 				created_at: "desc",
 			},

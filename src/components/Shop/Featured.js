@@ -11,7 +11,7 @@ const Featured = ({ currentUser, myListings,searchParams }) => {
 	const [listings, setListings] = useState(myListings);
 	const [cat, setCat] = useState("all");
 
-	// console.log(currentUser);
+	console.log(listings);
 
 	// useEffect(() => {
 	// 	const fetchData = async () => {

@@ -23,19 +23,6 @@ const FeaturedItem = ({
 	let shorten_array = shorten(title,price)
 
 
-	// let newTitle;
-	// if (title.length > 12){
-	// 	newTitle = title.substr(0,12);
-	// }
-	// else {
-	// 	newTitle = title;
-	// }
-
-	// console.log(price);
-
-
-
-
 	return (
 		<div className="single-featured">
 			<Link href={`/listing/${id}/${slug}`} className="feature-img">

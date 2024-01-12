@@ -22,7 +22,7 @@ const SearchForm = () => {
 
 	const [titles, setTitles] = useState([]);
 	const [title, setTitle] = useState('');
-	const [ttleSuggest, setTtleSuggest] = useState(false);
+	const [titleSuggest, setTitleSuggest] = useState(false);
 
 
 	// const handleSearch = useCallback(() => {
@@ -46,7 +46,7 @@ const SearchForm = () => {
 		setLocationValue(loc);
 	};
 	const handleTitleSelect = (ttle) => {
-		setTtleSuggest(false);
+		setTitleSuggest(false);
 		setTitle(ttle);
 	};
 
@@ -83,13 +83,13 @@ const SearchForm = () => {
 			axios
 				.get(`/api/titles/${ttleValue}`)
 				.then((response) => {
-					setCategories(response.data);
+					setTitles(response.data);
 				})
 				.catch((error) => {
 					toast.error("Something went wromg!");
 				});
 
-			setTtleSuggest(true);
+			setTitleSuggest(true);
 		}
 	}, []);
 

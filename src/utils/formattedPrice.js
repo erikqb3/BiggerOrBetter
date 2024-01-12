@@ -3,6 +3,6 @@ export const formattedPrice = (price) => {
 		style: "currency",
 		currency: "USD",
 	}).format(price);
-	console.log(formattedPriceUSD)
+	// console.log(formattedPriceUSD)
 	return formattedPriceUSD;
 };

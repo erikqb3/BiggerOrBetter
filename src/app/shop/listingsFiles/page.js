@@ -5,8 +5,6 @@ import SearchForm from "@/components/Listings/SearchForm";
 import { getCurrentUser } from "@/actions/getCurrentUser";
 export const dynamic = "force-dynamic";
 
-import Featured from "@/components/Shop/Featured";
-
 const page = async ({ searchParams }) => {
 	console.log(searchParams)
 	const { listings, totalPages } = await getListings(searchParams);
@@ -15,7 +13,12 @@ const page = async ({ searchParams }) => {
 	return (
 		<>
 			<SearchForm searchParams={searchParams} />
-			<Featured currentUser={currentUser} myListings={listings} searchParams={searchParams} />
+			<Listings
+				currentUser={currentUser}
+				totalPages={totalPages}
+				listings={listings}
+				searchParams={searchParams}
+			/>
 		</>
 	);
 };

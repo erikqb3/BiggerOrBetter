@@ -6,26 +6,27 @@ import axios from "axios";
 import FeaturedItem from "./FeaturedItem";
 import { toast } from "react-hot-toast";
 
-const Featured = ({ currentUser }) => {
-	const [listings, setListings] = useState([]);
+const Featured = ({ currentUser, myListings,searchParams }) => {
+	console.log(myListings, searchParams)
+	const [listings, setListings] = useState(myListings);
 	const [cat, setCat] = useState("all");
 
 	// console.log(currentUser);
 
-	useEffect(() => {
-		const fetchData = async () => {
-			await axios
-				.get(`/api/listings/featured?category=all`)
-				.then((response) => {
-					setListings(response.data);
-				})
-				.catch((error) => {
-					toast.error("Something went wromg!");
-				});
-		};
+	// useEffect(() => {
+	// 	const fetchData = async () => {
+	// 		await axios
+	// 			.get(`/api/listings/featured?category=all`)
+	// 			.then((response) => {
+	// 				setListings(response.data);
+	// 			})
+	// 			.catch((error) => {
+	// 				toast.error("Something went wromg!");
+	// 			});
+	// 	};
 
-		fetchData();
-	}, []);
+	// 	fetchData();
+	// }, []);
 
 	const getFeatured = async (cat) => {
 		setCat(cat);
@@ -46,7 +47,7 @@ const Featured = ({ currentUser }) => {
 						<h2>Featured Trades</h2>
 					</div>
 
-					<div className="section-title-right">
+					{/* <div className="section-title-right">
 						<ul className="nav nav-tabs featured-tabs">
 							<li className="nav-item">
 								<button
@@ -110,7 +111,7 @@ const Featured = ({ currentUser }) => {
 								</button>
 							</li>
 						</ul>
-					</div>
+					</div> */}
 				</div>
 			</div>
 

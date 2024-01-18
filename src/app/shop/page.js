@@ -12,7 +12,7 @@ const page = async ({ searchParams }) => {
 
 	return (
 		<>
-			<SearchForm searchParams={searchParams} />
+			{/* <SearchForm searchParams={searchParams} /> */}
 			<Listings
 				currentUser={currentUser}
 				totalPages={totalPages}

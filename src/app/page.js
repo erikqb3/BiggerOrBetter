@@ -14,17 +14,22 @@ import RecentViewings from "@/components/Index/RecentViewings";
 import { getCurrentUser } from "@/actions/getCurrentUser";
 // import getBlogPosts from "@/actions/getBlogPosts";
 import getAllUsers from "@/actions/getAllUser";
+import getSubscriptionByEmail from "@/actions/getSubscriptionByEmail";
 
 
 export const dynamic = "force-dynamic";
 const limitParams = { limit: 6 };
 export default async function Home() {
 	const currentUser = await getCurrentUser();
+	// const haveSubscript = await getSubscriptionByEmail(currentUser.email);
 	// const blogPosts = await getBlogPosts(limitParams);
 	const allUsers = await getAllUsers();
 	
-	// console.log(currentUser);
+	console.log(currentUser);
 
+	if (currentUser){
+		console.log("Hellow")
+	}
 	// currentUser.myHistory.reverse().forEach(listing_id => {
 		
 	// });
@@ -34,17 +39,21 @@ export default async function Home() {
 	return (
 		<>
 			<Banner />
-			{/* <Category /> */}
+
 			<RecentViewings currentUser={currentUser}/>
-			<Suggestions currentUser={currentUser}/>
+			{/* <Suggestions currentUser={currentUser}/>
 			<Featured currentUser={currentUser} />
 			<Traders allUsers={allUsers}/>
+			<Subscribe currentUser={currentUser} haveSubscript={haveSubscript}/> */}
+
+
+
+			{/* <Category /> */}
 			{/* <OtherTraders allUsers={allUsers}/> */}
 			{/* <WorkArea /> */}
 			{/* <Testimony /> */}
 			{/* <Favour /> */}
 			{/* <Partner /> */}
-			<Subscribe />
 			{/* <Blog blogPosts={blogPosts} /> */}
 		</>
 	);

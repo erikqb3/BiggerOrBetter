@@ -5,9 +5,13 @@ import { Pagination, Navigation } from "swiper";
 import axios from "axios";
 import FeaturedItem from "./FeaturedItem";
 import { toast } from "react-hot-toast";
+import getLocationName from "@/utils/getLocationName";
 
 const Featured = ({ currentUser, myListings,searchParams }) => {
-	// console.log(myListings, searchParams)
+	console.log(myListings[0])
+	getLocationName();
+
+
 	const [listings, setListings] = useState(myListings);
 	const [cat, setCat] = useState("all");
 
@@ -44,10 +48,10 @@ const Featured = ({ currentUser, myListings,searchParams }) => {
 			<div className="container">
 				<div className="section-title-wrap">
 					<div className="section-title left-title">
-						<h2>Featured Trades</h2>
+						<h2>Listings</h2>
 					</div>
 
-					{/* <div className="section-title-right">
+					<div className="section-title-right">
 						<ul className="nav nav-tabs featured-tabs">
 							<li className="nav-item">
 								<button
@@ -111,7 +115,7 @@ const Featured = ({ currentUser, myListings,searchParams }) => {
 								</button>
 							</li>
 						</ul>
-					</div> */}
+					</div>
 				</div>
 			</div>
 
@@ -120,10 +124,10 @@ const Featured = ({ currentUser, myListings,searchParams }) => {
 					<div className="tab-pane fade show active">
 						<Swiper 
 							spaceBetween={15}
-							grabCursor={true}
-							pagination={{
-								clickable: true,
-							}}
+							// grabCursor={true}
+							// pagination={{
+							// 	clickable: true,
+							// }}
 							breakpoints={{
 								0: {
 									slidesPerView: 2,
@@ -135,8 +139,8 @@ const Featured = ({ currentUser, myListings,searchParams }) => {
 									slidesPerView: 6,
 								},
 							}}
-							navigation={true}
-							modules={[Pagination, Navigation]}
+							// navigation={true}
+							// modules={[Pagination, Navigation]}
 							className="featured-slide"
 						>
 							{listings.length > 0 &&

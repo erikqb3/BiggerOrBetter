@@ -234,6 +234,10 @@
   .location-area .container .row .col-lg-4.col-sm-6:nth-of-type(n+5) {
     display: none;
   }
+  .subscribe-area .container .subscribe-bg .subscribe-content .newsletter-wrap .newsletter-form .default-btn {
+    position: initial;
+    right: 0;
+  }
   .passwordHelp {
     display: flex;
     justify-content: space-between;
@@ -374,6 +378,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
   .offer-area.featured-ads .container .section-title-wrap .left-title,
   .offer-area.featured-ads .container .section-title-wrap .section-title-right {
@@ -388,5 +393,15 @@
   .offer-area.featured-ads .container .section-title-wrap .left-title ul li button,
   .offer-area.featured-ads .container .section-title-wrap .section-title-right ul li button {
     padding: 10px 15px;
+  }
+  .offer-area.featured-ads .container-fluid.noCurrentUser .tab-content .tab-pane .swiper .swiper-wrapper {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .offer-area.featured-ads .container-fluid.noCurrentUser .tab-content .tab-pane .swiper .swiper-wrapper .swiper-slide {
+    margin: 0 !important;
+  }
+  .offer-area.featured-ads .container-fluid.noCurrentUser .tab-content .tab-pane .swiper .swiper-pagination-clickable {
+    display: none;
   }
 }/*# sourceMappingURL=customCSS_erik.css.map */

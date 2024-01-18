@@ -69,9 +69,9 @@ const FeaturedItem = ({
 				</ul>
 
 				<ul className="pricing justify-content-between align-items-center">
-					<li>
+					{/* <li>
 						<span className="price">{shorten_array[1]}</span>
-					</li>
+					</li> */}
 					<li>
 						<Link
 							href={`/listings/?category=${category}`}

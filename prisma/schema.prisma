@@ -1,152 +1,129 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
-    provider = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 datasource db {
-    provider     = "mysql"
-    url          = env("DATABASE_URL")
-    relationMode = "prisma"
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
 }
 
-model User {
-    id             Int         @id @default(autoincrement())
-    name           String?
-    email          String?     @unique
-    emailVerified  DateTime?
-    image          String?
-    hashedPassword String?
-    role           Role        @default(USER)
-    created_at     DateTime    @default(now())
-    updated_at     DateTime    @updatedAt
-    accounts       Account[]
-    profile        Profile?
-    listings       Listing[]
-    favourites     Favourite[]
-    reviews        Review[]
-    blogs          Blog[]
-    myHistory      String?
+model account {
+  id                Int     @id @default(autoincrement())
+  userId            Int
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  @@unique([provider, providerAccountId], map: "Account_provider_providerAccountId_key")
+  @@index([userId], map: "Account_userId_idx")
 }
 
-model Profile {
-    id       Int     @id @default(autoincrement())
-    userId   Int     @unique
-    bio      String? @db.Text
-    gender   String?
-    address  String?
-    phone    String?
-    website  String?
-    twitter  String?
-    facebook String?
-    linkedin String?
-    youtube  String?
-    user     User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+model blog {
+  id         Int      @id @default(autoincrement())
+  title      String
+  slug       String
+  content    String   @db.Text
+  imageSrc   String
+  category   String
+  userId     Int
+  created_at DateTime @default(now())
+
+  @@index([userId], map: "Blog_userId_idx")
 }
 
-model Account {
-    id                Int     @id @default(autoincrement())
-    userId            Int
-    type              String
-    provider          String
-    providerAccountId String
-    refresh_token     String?
-    access_token      String? @db.Text
-    expires_at        Int?
-    token_type        String?
-    scope             String?
-    id_token          String? @db.Text
-    session_state     String?
+model favourite {
+  id         Int      @id @default(autoincrement())
+  userId     Int
+  listingId  Int
+  created_at DateTime @default(now())
 
-    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-    @@unique([provider, providerAccountId])
-    @@index([userId])
+  @@index([userId, listingId], map: "Favourite_userId_listingId_idx")
 }
 
-model Listing {
-    id             Int      @id @default(autoincrement())
-    userId         Int
-    title          String
-    slug           String
-    description    String   @db.Text
-    imageSrc       String
-    address        String
-    features       String   @db.Text
-    created_at     DateTime @default(now())
-    category       String
-    location_value String
-    price          Int
-    status         Status   @default(Pending)
-    latitude       Float
-    longitude      Float
+model listing {
+  id             Int            @id @default(autoincrement())
+  userId         Int
+  title          String
+  slug           String
+  description    String         @db.Text
+  imageSrc       String
+  address        String
+  features       String         @db.Text
+  created_at     DateTime       @default(now())
+  category       String
+  location_value String
+  price          Int
+  status         listing_status @default(Pending)
+  latitude       Float
+  longitude      Float
 
-    user       User        @relation(fields: [userId], references: [id], onDelete: Cascade)
-    reviews    Review[]
-    favourites Favourite[]
-
-    @@index([userId])
+  @@index([userId], map: "Listing_userId_idx")
 }
 
-model Favourite {
-    id         Int      @id @default(autoincrement())
-    userId     Int
-    listingId  Int
-    created_at DateTime @default(now())
-
-    user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-    listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
-
-    @@index([userId, listingId])
+model profile {
+  id       Int     @id @default(autoincrement())
+  userId   Int     @unique(map: "Profile_userId_key")
+  bio      String?
+  gender   String?
+  address  String?
+  phone    String?
+  website  String?
+  twitter  String?
+  facebook String?
+  linkedin String?
+  youtube  String?
 }
 
-model Review {
-    id         Int      @id @default(autoincrement())
-    rating     Int
-    comment    String?  @db.Text
-    userId     Int
-    user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-    listingId  Int
-    listing    Listing  @relation(fields: [listingId], references: [id], onDelete: Cascade)
-    created_at DateTime @default(now())
+model review {
+  id         Int      @id @default(autoincrement())
+  rating     Int
+  comment    String?  @db.Text
+  userId     Int
+  listingId  Int
+  created_at DateTime @default(now())
 
-    @@index([userId, listingId])
+  @@index([userId, listingId], map: "Review_userId_listingId_idx")
 }
 
-model Blog {
-    id         Int      @id @default(autoincrement())
-    title      String
-    slug       String
-    content    String   @db.Text
-    imageSrc   String
-    category   String
-    userId     Int
-    created_at DateTime @default(now())
-    Filler     Int
-    user       User     @relation(fields: [userId], references: [id])
-
-    @@index([userId])
+model subscription {
+  id           Int                       @id @default(autoincrement())
+  email        String
+  is_subscribe subscription_is_subscribe @default(Enable)
+  created_at   DateTime                  @default(now())
 }
 
-model Subscription {
-    id           Int          @id @default(autoincrement())
-    email        String
-    is_subscribe IS_SUBSCRIBE @default(Enable)
-    created_at   DateTime     @default(now())
+model user {
+  id             Int       @id @default(autoincrement())
+  name           String?
+  email          String?   @unique(map: "User_email_key")
+  emailVerified  DateTime?
+  image          String?
+  hashedPassword String?
+  role           user_role @default(USER)
+  created_at     DateTime  @default(now())
+  updated_at     DateTime
+  myHistory      String?
 }
 
-enum Role {
-    USER
-    ADMIN
+enum subscription_is_subscribe {
+  Enable
+  Disabled
 }
 
-enum Status {
-    Pending
-    Approved
+enum user_role {
+  USER
+  ADMIN
 }
 
-enum IS_SUBSCRIBE {
-    Enable
-    Disabled
+enum listing_status {
+  Pending
+  Approved
 }

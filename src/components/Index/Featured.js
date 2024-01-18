@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
+import Link from "next/link";
 import axios from "axios";
 import FeaturedItem from "./FeaturedItem";
 import { toast } from "react-hot-toast";
@@ -22,6 +23,7 @@ const Featured = ({ currentUser }) => {
 				})
 				.catch((error) => {
 					toast.error("Something went wromg!");
+					console.log(error);
 				});
 		};
 
@@ -39,6 +41,8 @@ const Featured = ({ currentUser }) => {
 				toast.error("Something went wromg!");
 			});
 	};
+
+	
 	return (
 		<div className="offer-area bg-color-fffcf8 featured-ads">
 			<div className="container">
@@ -115,7 +119,7 @@ const Featured = ({ currentUser }) => {
 				</div>
 			</div>
 
-			<div className="container-fluid">
+			<div className= {currentUser ? "container-fluid" : "container-fluid noCurrentUser"} >
 				<div className="tab-content">
 					<div className="tab-pane fade show active">
 						<Swiper 
@@ -151,6 +155,9 @@ const Featured = ({ currentUser }) => {
 						</Swiper>
 					</div>
 				</div>
+			</div>
+			<div>
+				<Link className="seeMore default-btn" href="/listings">See More</Link>
 			</div>
 		</div>
 	);

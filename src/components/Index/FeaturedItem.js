@@ -36,7 +36,8 @@ const FeaturedItem = ({
 					<h3>
 						<Link href={`/listing/${id}/${slug}`}>{shorten_array[0]}</Link>
 					</h3>
-					<HeartButton currentUser={currentUser} listingId={id} />
+					{currentUser ? <HeartButton currentUser={currentUser} listingId={id} /> : <div></div>}
+					
 				</div>
 
 				<ul className="featured-info">
@@ -78,9 +79,9 @@ const FeaturedItem = ({
 							{category}
 						</Link>
 					</li>
-					<li>
+					{/* <li>
 						<span className="price">{shorten_array[1]}</span>
-					</li>
+					</li> */}
 				</ul>
 			</div>
 		</div>

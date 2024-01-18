@@ -231,6 +231,23 @@
       }
     }
   }
+  .subscribe-area {
+    .container{
+      .subscribe-bg{
+        .subscribe-content{
+          .newsletter-wrap{
+            .newsletter-form{
+              .default-btn{
+                position:initial;
+                right:0;
+                top:0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 @mixin minHome{ //min-width:760px
   .banner-area{
@@ -520,6 +537,7 @@
           display:flex;
           flex-direction: row;
           justify-content: space-between;
+          flex-wrap:wrap;
           .left-title,
           .section-title-right{
             width: fit-content;
@@ -531,6 +549,26 @@
               li{
                 button{
                   padding: 10px 15px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .container-fluid {
+        &.noCurrentUser{
+          .tab-content{
+            .tab-pane{
+              .swiper{
+                .swiper-wrapper{
+                  flex-wrap:wrap;
+                  justify-content:space-between;
+                  .swiper-slide{
+                    margin:0 !important;
+                  }
+                }
+                .swiper-pagination-clickable{
+                  display:none;
                 }
               }
             }

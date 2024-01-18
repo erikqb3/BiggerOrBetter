@@ -21,6 +21,7 @@ const ListingItem = ({
 	user,
 	currentUser,
 }) => {
+
 	return (
 		<div className="col-lg-4">
 			<div className="single-featured">
